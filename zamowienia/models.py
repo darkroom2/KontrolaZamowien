@@ -43,7 +43,8 @@ class Pozycja(models.Model):
     koniec_uzywania = models.DateTimeField('koniec używania')
 
     def __str__(self):
-        return 'od:_{}___do:_{}___{}___{}'.format(self.poczatek_uzywania.date(), self.koniec_uzywania.date(), self.ilosc, self.sprzet)
+        return 'od:_{}___do:_{}___{}___{}'.format(self.poczatek_uzywania.date(), self.koniec_uzywania.date(),
+                                                  self.ilosc, self.sprzet)
 
 
 class Zamowienie(models.Model):
@@ -52,7 +53,8 @@ class Zamowienie(models.Model):
     data_zlozenia = models.DateTimeField('złożono', auto_now_add=True)
 
     def __str__(self):
-        return '{}___{}___nowe: {}___{}'.format(self.id, self.data_zlozenia.date(), self.czy_nowe, self.pracownik_skladajacy)
+        return '{}___{}___nowe: {}___{}'.format(self.id, self.data_zlozenia.date(), self.czy_nowe,
+                                                self.pracownik_skladajacy)
 
 
 class ListaPozycji(models.Model):

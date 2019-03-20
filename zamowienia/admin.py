@@ -2,6 +2,7 @@ from django.contrib import admin
 from zamowienia.models import Pracownik, Wyplata, Sprzet, Cena, Pozycja, Zamowienie, ListaPozycji, ListaObslugujacych
 from django.contrib.admin.models import LogEntry
 
+
 # Register your models here.
 
 
@@ -40,6 +41,7 @@ class CenaAdmin(admin.ModelAdmin):
         'data_wprowadzenia_ceny',
     )
 
+
 class PozycjaAdmin(admin.ModelAdmin):
     list_display = (
         'sprzet',
@@ -48,11 +50,13 @@ class PozycjaAdmin(admin.ModelAdmin):
         'koniec_uzywania',
     )
 
+
 class ListaPozycjiAdmin(admin.ModelAdmin):
     list_display = (
         'zamowienie',
         'pozycja',
     )
+
 
 class ListaObslugujacychAdmin(admin.ModelAdmin):
     list_display = (
