@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -62,7 +61,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('kwota', models.DecimalField(decimal_places=2, default=0, max_digits=5)),
-                ('pracownik', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='zamowienia.Pracownik')),
+                (
+                    'pracownik',
+                    models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='zamowienia.Pracownik')),
             ],
         ),
         migrations.CreateModel(
@@ -71,7 +72,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('czy_nowe', models.BooleanField(default=True)),
                 ('data_zlozenia', models.DateTimeField(auto_now_add=True, verbose_name='złożono')),
-                ('pracownik_skladajacy', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='zamowienia.Pracownik')),
+                ('pracownik_skladajacy',
+                 models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='zamowienia.Pracownik')),
             ],
         ),
         migrations.AddField(
